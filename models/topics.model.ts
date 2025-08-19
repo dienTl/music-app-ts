@@ -8,7 +8,7 @@ const topicsSchema = new mongoose.Schema(
     status : String ,
     slug :String ,
     deleted:{
-      tpye : Boolean ,
+      type : Boolean ,
       default:false ,
     },
     deletedAt : Date ,
