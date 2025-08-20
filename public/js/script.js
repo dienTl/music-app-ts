@@ -27,3 +27,54 @@ if(aplayer){
     avatar.style.animationPlayState=  "paused" 
   })
 }
+// end button aplay 
+// buuton like
+const buttonLike = document.querySelector("[button-like]")
+if(buttonLike){
+  buttonLike.addEventListener("click",()=>{
+    const idSong =buttonLike.getAttribute("button-like");
+    const isActive = buttonLike.classList.contains("acitve")
+
+    const typeLike = isActive ?"dislike" :"like"
+    const link =`/songs/like/${typeLike}/${idSong}`
+    const option = {
+      method : "PATCH"
+    }
+    fetch(link,option)
+      .then(res =>res.json())
+      .then(data =>{
+        if(data.code == 200){
+          const span = buttonLike.querySelector("span")
+          span.innerHTML = `${data.like} thích`
+          buttonLike.classList.toggle("active")
+        }
+        
+      })
+  })
+}
+
+// end button like
+
+// buuton favorite
+const buttonFavorite = document.querySelector("[button-favorite]")
+if(buttonFavorite){
+  buttonFavorite.addEventListener("click",()=>{
+    const idSong =buttonFavorite.getAttribute("button-favorite");
+    const isActive = buttonFavorite.classList.contains("acitve")
+
+    const typeFavorite = isActive ?"unfavorite" :"favorite"
+    const link =`/songs/like/${typeFavorite}/${idSong}`
+    const option = {
+      method : "PATCH"
+    }
+    fetch(link,option)
+      .then(res =>res.json())
+      .then(data =>{
+        if(data.code == 200 ){
+          buttonFavorite.classList.toggle("active")
+        }
+      })
+  })
+}
+
+// end button favorite
