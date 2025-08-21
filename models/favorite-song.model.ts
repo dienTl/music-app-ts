@@ -10,7 +10,8 @@ const favoriteSongSchema = new mongoose.Schema(
     },
     deletedAt: Date,
   },
-  {timestamps:true
+  {
+    timestamps:true
 
   }
 )

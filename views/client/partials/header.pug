@@ -6,10 +6,33 @@ header.header
           a(href="/")
             img(src="/images/logo.jpg" ,width="100px", alt="logo")
             
-      .col-9 
+
+      .col-5
+        .box-search
+          form(
+            action="/search/result"
+            method="GET"
+          )
+            div(class="form-group d-flex mb-8")
+              input(
+                type="text"
+                placeholder="Nhập từ khóa..."
+                class="form-control"
+                name = "keyword"
+                value=keyword
+            )
+              button(
+                type="submit"
+                class="btn btn-primary"
+              ) Tìm
+
+
+      .col-4
         .inner-menu 
           ul 
             li 
-              a(href="/") Trang chủ
+              a(href="/") <i class="fa-solid fa-house"></i> Trang chủ
             li 
-              a(href="/topics") Chủ đề 
+              a(href="/topics") <i class="fa-solid fa-biohazard"></i> Chủ đề 
+            li 
+              a(href="/favorite-songs") <i class="fa-solid fa-heart "> </i> Yêu thích 

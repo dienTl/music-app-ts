@@ -105,6 +105,27 @@ max-width: 100%;
   color: #585858;
 }
 
+.song-item.inner-content .inner-time {
+  font-size: 13px;
+  font-weight: 500;
+  color: #585858;
+}
+
+.song-item.inner-content .inner-heart {
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 2px;
+  cursor: pointer;
+}
+
+.song-item .inner-content .inner-heart.active {
+  color: #ff0000;
+}
+
+.song-item .inner-content .inner-heart.active {
+  font-weight: 900;
+} 
+
 /* ewnd song item */
 
 .inner-actions{

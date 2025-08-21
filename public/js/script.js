@@ -56,14 +56,15 @@ if(buttonLike){
 // end button like
 
 // buuton favorite
-const buttonFavorite = document.querySelector("[button-favorite]")
-if(buttonFavorite){
-  buttonFavorite.addEventListener("click",()=>{
-    const idSong =buttonFavorite.getAttribute("button-favorite");
-    const isActive = buttonFavorite.classList.contains("acitve")
+const listButtonFavorite = document.querySelectorAll("[button-favorite]")
+if(listButtonFavorite.length >0){
+  listButtonFavorite.forEach((buttonFavorite)=>{
+    buttonFavorite.addEventListener("click",()=>{
+    const idSong = buttonFavorite.getAttribute("button-favorite");
+    const isActive = buttonFavorite.classList.contains("active")
 
-    const typeFavorite = isActive ?"unfavorite" :"favorite"
-    const link =`/songs/like/${typeFavorite}/${idSong}`
+    const typeFavorite = isActive ? "unfavorite" :"favorite"
+    const link = `/songs/favorite/${typeFavorite}/${idSong}`
     const option = {
       method : "PATCH"
     }
@@ -75,6 +76,8 @@ if(buttonFavorite){
         }
       })
   })
-}
+
+  })
+}  
 
 // end button favorite

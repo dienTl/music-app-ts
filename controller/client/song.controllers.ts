@@ -90,10 +90,12 @@ export const like =async (req :Request ,res :Response) =>{
   })
 }
 
-//[PATCH] //songs/like/:typeLike/:idSong 
+//[PATCH] //songs/favorite/:typeFavorite/:idSong 
 export const favorite = async (req:Request , res :Response) =>{
-  const idSong :String  =req.params.idSong ;
-  const typeFavorite : String = req.params.typeFavorite;
+  const idSong :string  = req.params.idSong ;
+  const typeFavorite : string = req.params.typeFavorite;
+  console.log(idSong)
+  console.log(typeFavorite)
 
   switch (typeFavorite) {
     case "favorite":
@@ -107,7 +109,7 @@ export const favorite = async (req:Request , res :Response) =>{
         await record.save()
       }
       break;
-    case "unfovarite":
+    case "unfavorite":
         await FavoriteSong.deleteOne({
           songId:idSong
         })
