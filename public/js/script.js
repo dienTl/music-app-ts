@@ -81,3 +81,23 @@ if(listButtonFavorite.length >0){
 }  
 
 // end button favorite
+
+// Search suggest 
+const boxSearch = document.querySelector(".box-search")
+if(boxSearch){
+  const input = boxSearch.querySelector("input[name='keyword']");
+  input.addEventListener("keyup",()=>{
+    const keyword = input.value
+    const link =`/search/suggest?keyword=${keyword}`;
+
+  
+    fetch(link)
+      .then(res => res.json())
+      .then(data =>{
+        data.songs.forEach(song =>{
+          
+        })
+      })
+  })
+}
+// end search suggest
