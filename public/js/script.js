@@ -86,6 +86,7 @@ if(listButtonFavorite.length >0){
 const boxSearch = document.querySelector(".box-search")
 if(boxSearch){
   const input = boxSearch.querySelector("input[name='keyword']");
+  const boxsuggest  =  boxSearch.querySelector(".inner-suggest")
   input.addEventListener("keyup",()=>{
     const keyword = input.value
     const link =`/search/suggest?keyword=${keyword}`;
@@ -94,9 +95,31 @@ if(boxSearch){
     fetch(link)
       .then(res => res.json())
       .then(data =>{
-        data.songs.forEach(song =>{
-          
+        const songs = data.songs ;
+        if(songs.length > 0){
+          boxsuggest.classList.add("show")
+           const htmls = songs.map(song =>{
+            return `
+            <a href="/songs/detail/${song.slug}" class="inner-item">
+              <div class="inner-image">
+                <img src="${song.avatar}" />
+              </div>
+              <div class="inner-info">
+                <div class="inner-title">${song.title}</div>
+                <div class="inner-singer">
+                  <i class="fa-solid fa-microphone-lines"></i> ${song.infoSinger.fullName}
+                </div>
+              </div>
+            </a>
+            `
         })
+
+        const boxlist = boxsuggest.querySelector(".inner-list")
+        boxlist.innerHTML = htmls.join("")
+        } else{
+          boxsuggest.classList.remove("show")
+        }
+      
       })
   })
 }

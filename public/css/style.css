@@ -241,6 +241,14 @@ margin-bottom: 20px;
 
 .box-search .inner-suggest.show {
   display: block;
+
+}
+
+.box-search .inner-suggest.show img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
 }
 .box-search .inner-suggest .inner-item {
   display: flex;
