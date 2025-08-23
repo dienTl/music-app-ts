@@ -71,16 +71,24 @@ block main
         ) 
       audio(controls upload-audio-play) 
         source(src="")
+
+    div(class="form-group")
+      label(for="lyrics") lời bài hát 
+      textarea(
+        class="form-control"
+        name="lyrics"
+        id="lyrics"
+        rows="20"
+        ) 
+
     div(class="form-group")
       label(for="desc") Mô tả
       textarea(
-        type="text"
-        class="form-control"
+        class="form-control textarea-mce"
         id="desc"
         name="description"
         rows="5"
-        textarea-mce
-      )
+    ) 
     div(class="form-group form-check form-check-inline")
       input(
       type="radio"
@@ -99,7 +107,7 @@ block main
       name="status"
       value="inactive"
       )
-      label(for="statusinActive" class="form-check-label") Dừng hoạt động 1
+      label(for="statusinActive" class="form-check-label") Dừng hoạt động
     div(class="form-group")
       button(
         type="submit"
