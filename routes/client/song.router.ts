@@ -4,6 +4,7 @@ import * as controller from "../../controller/client/song.controllers"
 const router : Router = Router();
 
 
+
 router.get("/:slugTopic", controller.list )
 
 router.get("/detail/:slugSong", controller.detail)

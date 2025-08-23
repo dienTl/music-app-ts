@@ -12,7 +12,7 @@ const adminRoutes = (app : Express): void =>{
 
   app.use(`${PATH_ADMIN}/topics`,topicRoutes)
 
-  app.use(`${PATH_ADMIN}/song`,SongRoutes)
+  app.use(`${PATH_ADMIN}/songs`,SongRoutes)
 }
 
 export default adminRoutes;
