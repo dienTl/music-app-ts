@@ -2,6 +2,7 @@ import express ,{ Express } from "express";
 import * as database from "./config/database"
 import dotenv from "dotenv"
 import path from "path"
+import methodOverride from "method-override"
 import bodyParser from "body-parser";
 import clientRoutes from "./routes/client/index.router"
 import adminRoutes from "./routes/admin/index.router";
@@ -12,6 +13,8 @@ database.connect();
 
 const app : Express = express();
 const port :number | string = process.env.PORT  || 3000;
+
+app.use(methodOverride('_method'))
 
 app.use(express.json())
 app.use(express.urlencoded({extended:true}))

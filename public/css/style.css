@@ -179,7 +179,7 @@ max-width: 100%;
 .singer-detail .inner-desc .inner-text {
   font-size: 14px;
   padding: 10px 15px;
-  white-space: pre;
+  white-space: pre-line;
 }
 
 .singer-detail .inner-actions .inner-action i {
